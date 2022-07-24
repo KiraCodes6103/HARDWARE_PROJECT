@@ -1,0 +1,26 @@
+int lightpin=A0;
+int buzz=8;
+int lightval;
+
+
+
+
+void setup() {
+  pinMode(lightpin,INPUT);
+  pinMode(buzz,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  lightval=analogRead(lightpin);
+  Serial.println(lightval);
+  delay(300);
+  if(lightval>=500){
+    digitalWrite(buzz,HIGH);
+    delay(100);
+    digitalWrite(buzz,LOW);
+    delay(100);
+  }
+
+
+}
